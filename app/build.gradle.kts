@@ -157,8 +157,6 @@ android {
     minSdk = signalMinSdkVersion
     targetSdk = signalTargetSdkVersion
 
-    multiDexEnabled = true
-
     vectorDrawables.useSupportLibrary = true
     project.ext.set("archivesBaseName", "Signal")
 
@@ -483,7 +481,6 @@ dependencies {
   implementation(libs.androidx.compose.runtime.livedata)
   implementation(libs.androidx.activity.compose)
   implementation(libs.androidx.constraintlayout)
-  implementation(libs.androidx.multidex)
   implementation(libs.androidx.navigation.fragment.ktx)
   implementation(libs.androidx.navigation.ui.ktx)
   implementation(libs.androidx.navigation.compose)
@@ -572,7 +569,6 @@ dependencies {
   testImplementation(testLibs.robolectric.robolectric) {
     exclude(group = "com.google.protobuf", module = "protobuf-java")
   }
-  testImplementation(testLibs.robolectric.shadows.multidex)
   testImplementation(testLibs.bouncycastle.bcprov.jdk15on) {
     version {
       strictly("1.70")
